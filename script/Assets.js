@@ -42,11 +42,15 @@ Game.loadAssets = function () {
     sprites.aboutButton = loadSprite("about_button.png");
     sprites.aboutButtonHover = loadSprite("about_button_hover.png");
     sprites.controls = loadSprite("controls.png");
+    sprites.hudpower = loadSprite("hudpower.png");
+    sprites.circle = loadSprite("circle.png");
+    sprites.taco = loadSprite("taco.png");
 
     sounds.side = loadSound("Side.wav");
     sounds.ballsCollide = loadSound("BallsCollide.wav");
     sounds.strike = loadSound("Strike.wav");
     sounds.hole = loadSound("Hole.wav");
+
     
     // Bossa Antigua Kevin MacLeod (incompetech.com)
     // Licensed under Creative Commons: By Attribution 3.0 License

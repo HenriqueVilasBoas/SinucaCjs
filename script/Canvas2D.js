@@ -113,5 +113,29 @@ Canvas2D_Singleton.prototype.drawText = function (text, position, origin, color,
     this._canvasContext.restore();
 };
 
-var Canvas2D = new Canvas2D_Singleton();
+Canvas2D_Singleton.prototype.drawSprite = function (sprite, position, rotation, scale, origin) {
+    var canvasScale = this.scale;
 
+    position = typeof position !== 'undefined' ? position : Vector2.zero;
+    rotation = typeof rotation !== 'undefined' ? rotation : 0;
+    scale = typeof scale !== 'undefined' ? scale : 1;
+    origin = typeof origin !== 'undefined' ? origin : Vector2.zero;
+
+    this._canvasContext.save();
+    this._canvasContext.scale(canvasScale.x, canvasScale.y);
+    this._canvasContext.translate(position.x, position.y);
+    this._canvasContext.rotate(rotation);
+
+    // Aumente o tamanho do sprite no eixo vertical e horizontal
+    var increasedScale = 1; // Fator de aumento, você pode ajustá-lo conforme necessário
+
+    this._canvasContext.drawImage(sprite, 0, 0,
+        sprite.width, sprite.height,
+        -origin.x * scale * increasedScale, -origin.y * scale * increasedScale,
+        sprite.width * scale * increasedScale, sprite.height * scale * increasedScale);
+
+    this._canvasContext.restore();
+
+};
+
+var Canvas2D = new Canvas2D_Singleton();

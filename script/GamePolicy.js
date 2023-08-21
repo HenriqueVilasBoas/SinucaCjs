@@ -3,16 +3,11 @@ function GamePolicy(){
 
     this.turn = 0;
     this.firstCollision = true;
-    let player1TotalScore = new Score(new Vector2(Game.size.x/2 - 7005,Game.size.y/2 - 45));
-    let player2TotalScore = new Score(new Vector2(Game.size.x/2 + 7005,Game.size.y/2 - 45));
 
-    let player1MatchScore = new Score(new Vector2(Game.size.x/2 - 2800,1008));
-    let player2MatchScore = new Score(new Vector2(Game.size.x / 2 + 2300, 1008));
-
-    //let player1TotalScore = new Score(new Vector2(Game.size.x / 2 - 75, Game.size.y / 2 - 45));
-    //let player2TotalScore = new Score(new Vector2(Game.size.x / 2 + 75, Game.size.y / 2 - 45));
-    //let player1MatchScore = new Score(new Vector2(Game.size.x / 2 - 28, 108));
-    //let player2MatchScore = new Score(new Vector2(Game.size.x / 2 + 23, 108));
+    let player1TotalScore = new Score(new Vector2(Game.size.x / 2 - 7500, Game.size.y / 2 - 45));
+    let player2TotalScore = new Score(new Vector2(Game.size.x / 2 + 7500, Game.size.y / 2 - 45));
+    let player1MatchScore = new Score(new Vector2(Game.size.x / 2 - 2800, 108));
+    let player2MatchScore = new Score(new Vector2(Game.size.x / 2 + 2300, 108));
 
     this.players = [new Player(player1MatchScore,player1TotalScore), new Player(player2MatchScore,player2TotalScore)];
     this.foul = false;
@@ -33,6 +28,8 @@ function GamePolicy(){
     this.bottomLeftHolePos = new Vector2(169, 755)
     this.bottomRightHolePos = new Vector2(1323, 741);
 }
+
+
 
 GamePolicy.prototype.reset = function(){
     this.turn = 0;
